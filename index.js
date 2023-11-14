@@ -16,7 +16,7 @@ const ordersRouter = require('./routes/Order');
 //middlewares
 
 server.use(cors({
-    exposedHeaders:['X-Total-Count']
+    exposedHeaders: ['X-Total-Count']
 }))
 server.use(express.json()); // to parse req.body
 server.use('/products', productsRouter.router);
@@ -27,19 +27,19 @@ server.use('/auth', authRouter.router)
 server.use('/cart', cartRouter.router)
 server.use('/orders', ordersRouter.router)
 
-main().catch(err=> console.log(err));
+main().catch(err => console.log(err));
 
-async function main(){
+async function main() {
     await mongoose.connect('mongodb+srv://keshavjha:keshavjha@mern-estate.gimkjiw.mongodb.net/showroom?retryWrites=true&w=majority');
     console.log('database connected')
 }
 
-server.get('/',(req, res)=>{
-    res.json({status:'success'})
+server.get('/', (req, res) => {
+    res.json({ status: 'success' })
 })
 
 
 
-server.listen(8080, ()=>{
+server.listen(8080, () => {
     console.log('server started')
 })
