@@ -1,6 +1,6 @@
 // Import necessary modules
 const bcrypt = require('bcrypt');
-const { User } = require('../models/User'); // Import your User model
+const { User } = require('../model/User'); // Import your User model
 
 // Controller function for user signup
 exports.createUser = async (req, res) => {
